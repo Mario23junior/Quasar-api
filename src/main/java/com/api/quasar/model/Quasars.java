@@ -1,12 +1,27 @@
 package com.api.quasar.model;
 
-public class Quasars {
+import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Quasars {
+    
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	private String img;
 	private String ascensaoDireita;
 	private String declinacao;
+	
+	@OneToMany(mappedBy = "quasars", cascade = CascadeType.ALL)
+	private List<DadosObservacionais> dadosObservacionais;
 
 	public Quasars() {
 		// TODO Auto-generated constructor stub

@@ -1,13 +1,25 @@
 package com.api.quasar.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class DadosObservacionais {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nomeConstalacao;
 	private String desvioVermelho;
 	private String tipo;
 	private String distancia;
 	private String magnetudeAparente;
+    
+	@ManyToOne
+	private Quasars quasars;
 	
 	public DadosObservacionais() {
 		//TODO Auto-generated constructor stub
