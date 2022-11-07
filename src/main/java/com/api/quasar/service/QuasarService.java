@@ -28,7 +28,7 @@ public class QuasarService {
 	public Response save(QuasarsDTO quasarsDto) {
 		Optional<Quasars> findNome = repository.findByNome(quasarsDto.getNome());
 		if(findNome.isPresent()) {
-			throw new ReturnMessageExceptions("Erro ao salvar quasar "+findNome+" tente novamente");
+			throw new ReturnMessageExceptions("Erro ao salvar quasar por favor tente novamente");
 		}
 		Quasars quasar = mapper.map(quasarsDto, Quasars.class);
 		repository.persist(quasar);
