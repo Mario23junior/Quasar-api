@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Quasars {
-    
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -19,12 +19,20 @@ public class Quasars {
 	private String img;
 	private String ascensaoDireita;
 	private String declinacao;
-	
+
 	@OneToMany(mappedBy = "quasars", cascade = CascadeType.ALL)
 	private List<DadosObservacionais> dadosObservacionais;
 
 	public Quasars() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public List<DadosObservacionais> getDadosObservacionais() {
+		return dadosObservacionais;
+	}
+
+	public void setDadosObservacionais(List<DadosObservacionais> dadosObservacionais) {
+		this.dadosObservacionais = dadosObservacionais;
 	}
 
 	public Long getId() {
@@ -66,4 +74,5 @@ public class Quasars {
 	public void setDeclinacao(String declinacao) {
 		this.declinacao = declinacao;
 	}
+
 }
