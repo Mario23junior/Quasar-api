@@ -2,6 +2,7 @@ package com.api.quasar;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -26,5 +27,10 @@ public class QuasarController {
 	@POST
 	public Response savequasar(QuasarsDTO quasarsdto) {
 		return service.save(quasarsdto);
+	}
+
+	@GET
+	public Response ListAll() {
+		return service.findAllBase();
 	}
 }
