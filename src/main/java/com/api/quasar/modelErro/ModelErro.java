@@ -1,22 +1,21 @@
 package com.api.quasar.modelErro;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class ModelErro {
 
 	private Integer status;
-	private Date timestap;
 	private String message;
 	private String path;
 
 	public ModelErro() {
-		// TODO Auto-generated constructor stub
-	}
+ 	}
 
 	public ModelErro(Integer status, Date timestap, String message, String path) {
 		super();
 		this.status = status;
-		this.timestap = timestap;
 		this.message = message;
 		this.path = path;
 	}
@@ -29,12 +28,13 @@ public class ModelErro {
 		this.status = status;
 	}
 
-	public Date getTimestap() {
-		return timestap;
-	}
+	public String getTimestap() {
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+		Calendar calendar = Calendar.getInstance();
+		return formatter.format(calendar.getTime());
+	}	
 
 	public void setTimestap(Date timestap) {
-		this.timestap = timestap;
 	}
 
 	public String getMessage() {
