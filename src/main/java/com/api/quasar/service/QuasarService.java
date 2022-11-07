@@ -18,6 +18,6 @@ public class QuasarService {
   
 	@Transactional
 	public Response save(QuasarsDTO quasarsDto) {
-		
+		return null;
 	}
 }
