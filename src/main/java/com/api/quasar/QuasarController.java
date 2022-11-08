@@ -42,9 +42,9 @@ public class QuasarController {
 		return service.listId(id);
 	}
 	
-//	@GET
-//	@Path("{nome}")
-//	public Response listId(@QueryParam("nome") String nome) {
-//		return service.findByName(nome);
-//	}
+	@GET
+	@Path("nome")
+	public Response listId(@QueryParam("nome") String nome) {
+		return service.findByName(nome);
+	}
 }
