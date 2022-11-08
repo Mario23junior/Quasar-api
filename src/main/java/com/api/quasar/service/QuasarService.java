@@ -67,6 +67,20 @@ public class QuasarService {
 						.collect(Collectors.toList());
 				return Response.status(Response.Status.CREATED).entity(dtobase).build();
 			}
-		} 
+		}
+	
+//	public Response findByName(String nome) {
+//		PanacheQuery<Quasars> listName = repository.find("nome", nome);
+//		if(listName.equals(null)) {
+//			Response.status(Response.Status.NO_CONTENT).build();
+//				throw new ReturnMessageExceptions("Quasar :"+nome+" não foi encontrado,por favor tente novamente.");
+//			}else {
+//				List<QuasarsDTO> dtobase = listName
+//						.stream()
+//						.map(convert -> mapper.map(convert,QuasarsDTO.class))
+//						.collect(Collectors.toList());
+//				return Response.status(Response.Status.CREATED).entity(dtobase).build();
+//			}
+//	}
 }
  
