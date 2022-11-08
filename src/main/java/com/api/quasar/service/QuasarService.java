@@ -54,5 +54,19 @@ public class QuasarService {
 			return Response.ok(list).build();
 		}
 	}
-	 
+	
+	public Response listId(Long id) {
+		PanacheQuery<Quasars> listId = repository.find("id", id);
+		if(listId.equals(null)) {
+			Response.status(Response.Status.NO_CONTENT).build();
+				throw new ReturnMessageExceptions("Quasar de id :"+id+" não foi encontrado,por favor tente novamente.");
+			}else {
+				List<QuasarsDTO> dtobase = listId
+						.stream()
+						.map(convert -> mapper.map(convert,QuasarsDTO.class))
+						.collect(Collectors.toList());
+				return Response.status(Response.Status.CREATED).entity(dtobase).build();
+			}
+		} 
 }
+ 
