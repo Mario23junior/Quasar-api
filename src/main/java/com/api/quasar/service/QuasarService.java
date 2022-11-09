@@ -94,5 +94,20 @@ public class QuasarService {
 			throw new ReturnMessageExceptions("Erro ao deletar quasar de id "+id);
 		}
 	}
+	
+	
+	public Response update(Long id, QuasarsDTO quasarsDto) {
+		Quasars listid = repository.findById(id);
+		
+		if(listid != null) {
+			listid.setNome(quasarsDto.getNome());
+			listid.setImg(quasarsDto.getImg());
+			listid.setAscensaoDireita(quasarsDto.getAscensaoDireita());
+ 			listid.setDeclinacao(quasarsDto.getDeclinacao());
+ 			return Response.status(Response.Status.NO_CONTENT).build();
+		} else {
+ 			return Response.status(Response.Status.NOT_FOUND).build();
+		}
+	}
 }
  
