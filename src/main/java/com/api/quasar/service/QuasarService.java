@@ -82,5 +82,17 @@ public class QuasarService {
 				return Response.status(Response.Status.CREATED).entity(dtobase).build();
 			}
 	}
+	
+	
+	public Response delete(Long id) {
+		Quasars quasar = repository.findById(id);
+		if(quasar != null) {
+			repository.delete(quasar);
+			return Response.status(Response.Status.NO_CONTENT).build();
+		} else {
+			Response.status(Response.Status.NOT_FOUND).build();
+			throw new ReturnMessageExceptions("Erro ao deletar quasar de id "+id);
+		}
+	}
 }
  
