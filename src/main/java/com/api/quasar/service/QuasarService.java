@@ -70,7 +70,7 @@ public class QuasarService {
 		}
 	
 	public Response findByName(String nome) {
-		PanacheQuery<Quasars> listName = repository.find("nome", nome.toUpperCase().toLowerCase());
+		Optional<Quasars> listName = repository.findByNome(nome);
 		if(listName.equals(null)) {
 			Response.status(Response.Status.NO_CONTENT).build();
 				throw new ReturnMessageExceptions("Quasar :"+nome+" não foi encontrado,por favor tente novamente.");
