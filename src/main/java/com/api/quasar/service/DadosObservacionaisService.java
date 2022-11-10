@@ -28,8 +28,7 @@ public class DadosObservacionaisService {
 	public Response saveDadosObser(DadosObservacionaisDTO dadosObserDto) {
 		Optional<DadosObservacionais> findDadosObser = repository.findByName(dadosObserDto.getNomeConstalacao());
 		if(findDadosObser.isPresent()) {
-			throw new ReturnMessageExceptions("Erro ao salvar dados da costelação "
-		 +findDadosObser+" por favor tente novamente.");
+			throw new ReturnMessageExceptions("Erro ao salvar dados da costelação ,por favor tente novamente.");
 		}
 		DadosObservacionais dadosObser = mapper.map(dadosObserDto,DadosObservacionais.class);
 		repository.persist(dadosObser);
