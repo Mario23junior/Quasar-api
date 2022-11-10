@@ -36,4 +36,9 @@ public class DadosObservacionaisController {
 		return service.listId(id);
 	}
 	
+	@GET
+	public Response listAll() {
+		return service.listAllDadosObser();
+	}
+	
 }

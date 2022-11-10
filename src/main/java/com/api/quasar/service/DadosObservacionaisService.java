@@ -43,6 +43,20 @@ public class DadosObservacionaisService {
 		return saveOut;
 	}
 	
+	public Response listAllDadosObser() {
+		PanacheQuery<DadosObservacionais> list = repository.findAll();
+		if(list.equals(null)) {
+			throw new ReturnMessageExceptions("Erro ao buscar informação.");
+		} else {
+			List<DadosObservacionaisDTO> listbase = list
+					.stream()
+					.map(listall -> mapper.map(listall, DadosObservacionaisDTO.class))
+					.collect(Collectors.toList());
+			return Response.ok(listbase).build();
+			
+		}
+	}
+	
 	public Response listId(Long id) {
 		PanacheQuery<DadosObservacionais> listid = repository.find("id",id);
 		if(listid.equals(null)) {
