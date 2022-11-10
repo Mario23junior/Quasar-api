@@ -98,7 +98,6 @@ public class QuasarService {
 	
 	public Response update(Long id, QuasarsDTO quasarsDto) {
 		Quasars listid = repository.findById(id);
-		
 		if(listid != null) {
 			listid.setNome(quasarsDto.getNome());
 			listid.setImg(quasarsDto.getImg());
