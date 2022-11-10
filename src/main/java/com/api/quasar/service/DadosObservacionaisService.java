@@ -73,4 +73,17 @@ public class DadosObservacionaisService {
 		
 	}
 	
+	public Response deleteId(Long id) {
+		DadosObservacionais dadosObser = repository.findById(id);
+		if(dadosObser != null) {
+			repository.delete(dadosObser);
+			return Response.status(Response.Status.NO_CONTENT).build(); 
+		} else {
+			Response.status(Response.Status.NOT_FOUND).build();
+			throw new ReturnMessageExceptions("Erro ao deletar quasar de id "+id);
+		}
+	}
+	
+	
+	
 }
