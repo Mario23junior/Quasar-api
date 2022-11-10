@@ -6,7 +6,6 @@ import javax.enterprise.context.ApplicationScoped;
 
 import com.api.quasar.model.DadosObservacionais;
 
-import io.quarkus.hibernate.orm.panache.PanacheQuery;
 import io.quarkus.hibernate.orm.panache.PanacheRepositoryBase;
 
 @ApplicationScoped
