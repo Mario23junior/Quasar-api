@@ -6,6 +6,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -48,5 +49,12 @@ public class DadosObservacionaisController {
 	@Path("{id}")
 	public Response delete(@PathParam("id") Long id) {
 		return service.deleteId(id);
+	}
+	
+	@PUT
+	@Transactional
+	@Path("{id}")
+	public Response update(@PathParam("id") Long id, DadosObservacionaisDTO dadosObser) {
+		return service.update(id, dadosObser);
 	}
 }

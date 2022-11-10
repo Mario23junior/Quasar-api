@@ -84,6 +84,21 @@ public class DadosObservacionaisService {
 		}
 	}
 	
+	public Response update(Long id, DadosObservacionaisDTO dadosObserdto) {
+		DadosObservacionais listId = repository.findById(id);
+		if(listId != null) {
+			listId.setNomeConstalacao(dadosObserdto.getNomeConstalacao());
+			listId.setDescricao(dadosObserdto.getDescricao());
+			listId.setDesvioVermelho(dadosObserdto.getDesvioVermelho());
+			listId.setMagnetudeAparente(dadosObserdto.getMagnetudeAparente());
+			listId.setTipo(dadosObserdto.getTipo());
+			listId.setDesvioVermelho(dadosObserdto.getDesvioVermelho());
+			return Response.status(Response.Status.NO_CONTENT).build();
+		} else {
+			return Response.status(Response.Status.NOT_FOUND).build();
+		}
+		
+	}
 	
 	
 }

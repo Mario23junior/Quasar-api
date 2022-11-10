@@ -95,7 +95,6 @@ public class QuasarService {
 		}
 	}
 	
-	
 	public Response update(Long id, QuasarsDTO quasarsDto) {
 		Quasars listid = repository.findById(id);
 		if(listid != null) {
