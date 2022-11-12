@@ -30,6 +30,7 @@ public class QuasarController {
 	}
 
 	@POST
+	@Transactional
 	public Response savequasar(QuasarsDTO quasarsdto) {
 		return service.save(quasarsdto);
 	}

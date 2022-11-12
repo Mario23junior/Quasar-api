@@ -9,7 +9,8 @@ public class DadosObservacionaisDTO {
 	private String distancia;
 	private String magnetudeAparente;
 	private String descricao;
-
+    
+	private QuasarsDTO quasarDto;
  
 	public DadosObservacionaisDTO() {
 		// TODO Auto-generated constructor stub
@@ -71,6 +72,15 @@ public class DadosObservacionaisDTO {
 		this.descricao = descricao;
 	}
 
+	public QuasarsDTO getQuasarDto() {
+		return quasarDto;
+	}
+
+	public void setQuasarDto(QuasarsDTO quasarDto) {
+		this.quasarDto = quasarDto;
+	}
+
+	
 	 
 
 }
