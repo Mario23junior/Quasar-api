@@ -1,0 +1,339 @@
+{
+	"info": {
+		"_postman_id": "c7acbf3f-d962-40b2-9259-1939939847dd",
+		"name": "Quasares",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10455541"
+	},
+	"item": [
+		{
+			"name": "Quasar",
+			"item": [
+				{
+					"name": "Salvando quasares na base de dados",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"3C 47\",\n    \"img\": \"https://upload.wikimedia.org/wikipedia/commons/0/05/3C47-U4492101R.jpg\",\n    \"ascensaoDireita\": \"01 h 36m 24.42s\",\n    \"declinacao\": \"+20° 57´ 27.5´´\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/quasares/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"quasares",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listandos todos os quasares da base de dados.",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/quasares/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"quasares",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listando quasares por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/quasares/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"quasares",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscando quasar por nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/quasares/nome?nome=3C 47",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"quasares",
+								"nome"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "3C 47"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando dados por id de identificação",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/quasares/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"quasares",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando dados de quasar por id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"3C 47\",\n    \"img\": \"https://upload.wikimedia.org/wikipedia/commons/0/05/3C47-U4492101R.jpg\",\n    \"ascensaoDireita\": \"01 h 36m 24.42s\",\n    \"declinacao\": \"+20° 57´ 27.5´´\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/quasares/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"quasares",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dados Observacionais",
+			"item": [
+				{
+					"name": "Salvando dados observacionais",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nomeConstalacao\": \"Pisces\",\n    \"desvioVermelho\": \"0.425 ± 0.0 km/s\",\n    \"tipo\": \"Sy1\",\n    \"distancia\": \"11157.9336 ano-luz\",\n    \"magnetudeAparente\": \"18.1\",\n    \"descricao\": \"3C 47 é uma galáxia Seyfert um quasar dominado por lóbulos localizada na constelação de Peixes. Foi o primeiro quasar encontrado com a estrutura clássica de duplo lóbulo de rádio.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/dadosobservacionais/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"dadosobservacionais",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtendo dados observacionais por id de  identificação.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/dadosobservacionais/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"dadosobservacionais",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LIstando todos as costelações registradas na base de dados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/dadosobservacionais/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"dadosobservacionais",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando dados observarcionais por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/dadosobservacionais/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"dadosobservacionais",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando informações de dados observacionais por id de identificação",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nomeConstalacao\": \"Pisces\",\n    \"desvioVermelho\": \"0.425 ± 0.0 km/s\",\n    \"tipo\": \"Sy1\",\n    \"distancia\": \"11157.9336 ano-luz\",\n    \"magnetudeAparente\": \"18.1\",\n    \"descricao\": \"3C 47 é uma galáxia Seyfert um quasar dominado por lóbulos localizada na constelação de Peixes. Foi o primeiro quasar encontrado com a estrutura clássica de duplo lóbulo de rádio.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/dadosobservacionais/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"dadosobservacionais",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Listagem de dados finalzadso.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/api/quasarbase/listall/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"quasarbase",
+						"listall",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
