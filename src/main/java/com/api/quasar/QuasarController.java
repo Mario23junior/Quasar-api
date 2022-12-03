@@ -23,13 +23,14 @@ import com.api.quasar.service.QuasarService;
 public class QuasarController {
 
 	private QuasarService service;
-
+ 
 	@Inject
 	public QuasarController(QuasarService service) {
 		this.service = service;
 	}
 
 	@POST
+	@Transactional
 	public Response savequasar(QuasarsDTO quasarsdto) {
 		return service.save(quasarsdto);
 	}
@@ -38,6 +39,7 @@ public class QuasarController {
 	public Response ListAll() {
 		return service.findAllBase();
 	}
+	
 	
 	@GET
 	@Path("{id}")

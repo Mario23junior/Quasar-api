@@ -10,8 +10,9 @@ import io.quarkus.hibernate.orm.panache.PanacheRepositoryBase;
 
 @ApplicationScoped
 public class QuasaresRepository implements PanacheRepositoryBase<Quasars, Long> {
-  
-	public Optional<Quasars> findByNome(String nome){
-		return find("nome",nome.toUpperCase().toLowerCase()).firstResultOptional();
+
+	public Optional<Quasars> findByNome(String nome) {
+		return find("nome", nome.toUpperCase().toLowerCase()).firstResultOptional();
 	}
+
 }

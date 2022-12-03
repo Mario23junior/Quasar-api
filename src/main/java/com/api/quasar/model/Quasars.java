@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,7 +21,8 @@ public class Quasars {
 	private String ascensaoDireita;
 	private String declinacao;
 
-	@OneToMany(mappedBy = "quasars", cascade = CascadeType.ALL)
+	
+	@OneToMany(mappedBy = "quasars", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	private List<DadosObservacionais> dadosObservacionais;
 
 	public Quasars() {
